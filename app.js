@@ -267,8 +267,12 @@ function toggleAudioPlayback(playBtn, playerDeck, timeDisplay, latencyDisplay) {
   }
 
   // Create or reuse audio element
-  if (!currentAudio || currentAudio.src !== location.origin + '/' + voice.file) {
+  if (!currentAudio || currentAudio.getAttribute('data-voice') !== currentVoiceId) {
+    if (currentAudio) {
+      currentAudio.pause();
+    }
     currentAudio = new Audio(voice.file);
+    currentAudio.setAttribute('data-voice', currentVoiceId);
 
     currentAudio.addEventListener('loadedmetadata', () => {
       updateTimeDisplay(currentAudio, timeDisplay);
