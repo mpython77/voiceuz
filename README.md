@@ -26,7 +26,7 @@ Every major global voice platform treats Central Asian languages as a checkbox �
 ## ⚡ Core Capabilities
 
 - **🚀 Ultra-Low Latency Inference (<150ms TTFB):** First audio chunks streamed over WebSockets within 100–150ms from token arrival.
-- **🗣️ Orpheus Neural TTS:** High-fidelity speech synthesis trained on curated Uzbek studio and conversational datasets. Captures natural breathing, micro-pauses, and emotional inflections.
+- **🗣️ VoiceUZ Neural Speech Engine:** High-fidelity proprietary speech synthesis trained on curated Uzbek studio and conversational datasets. Captures natural breathing, micro-pauses, and emotional inflections.
 - **🎧 Conformer Streaming STT:** Noise-resilient streaming speech recognition supporting both Latin (`O'zbek`) and Cyrillic (`Ўзбек`) orthographies with dynamic text normalization.
 - **🔄 Full-Duplex Voice Agent Pipeline:** Integrates VAD (Voice Activity Detection), STT, LLM reasoning, and TTS into an end-to-end real-time loop.
 - **🏢 Enterprise Air-Gapped Deployment:** Complete on-premises Docker and Kubernetes containers for banking, fintech, government, and telecom compliance.
@@ -61,7 +61,7 @@ flowchart LR
         STT["Streaming Conformer STT (Uzbek Acoustic Model)"]
         Norm[Dual-Script Text Normalizer]
         Agent["LLM / Business Logic Orchestrator"]
-        TTS["Orpheus Neural TTS (CUDA TensorRT)"]
+        TTS["VoiceUZ Neural TTS (CUDA TensorRT)"]
     end
 
     Mic -->|Raw PCM 16kHz| VAD
@@ -174,7 +174,7 @@ We are a specialized engineering team based in Tashkent, building speech infrast
 | Member | Role | Focus Area | Profile |
 |:---|:---|:---|:---:|
 | **Mukhammadali** | Founder & CEO | Product Vision, Architecture & Strategy | [GitHub](https://github.com/mpython77) |
-| **Sardor** | CTO & Speech Engineer | Orpheus TTS, CUDA kernels & TensorRT optimization | — |
+| **Sardor** | CTO & Speech Engineer | VoiceUZ Speech Architecture, CUDA kernels & TensorRT | — |
 | **Madina** | ML Research Lead | Conformer STT, Uzbek phoneme modeling & acoustics | — |
 | **Jasur** | Infrastructure Engineer | GPU clusters, low-latency WebSocket orchestrator | — |
 
