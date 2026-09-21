@@ -1,0 +1,22 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary & Environment
+.env
+.env.local
+*.log
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+dist/
+build/

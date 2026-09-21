@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags -->
+  <title>VoiceUZ — Real-Time Voice AI | Sub-150ms TTS & STT</title>
+  <meta name="title" content="VoiceUZ — Real-Time Voice AI | Sub-150ms TTS & STT">
+  <meta name="description" content="Ship voice features that actually feel real. VoiceUZ delivers streaming TTS and STT with under 150ms latency — starting with native Uzbek support that doesn't exist anywhere else.">
+  <meta name="keywords" content="Voice AI, Uzbek TTS, Uzbek STT, Real-time Speech AI, Orpheus TTS, Low Latency Voice, Speech to text, VoiceUZ, AI Startup, Conversational AI">
+  <meta name="author" content="VoiceUZ">
+  <link rel="canonical" href="https://voiceuz.com/">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://voiceuz.com/">
+  <meta property="og:title" content="VoiceUZ — Real-Time Voice AI | Sub-150ms TTS & STT">
+  <meta property="og:description" content="Streaming speech synthesis and transcription fast enough for real conversation. Native Uzbek and multilingual support.">
+  <meta property="og:image" content="https://voiceuz.com/assets/logo.svg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://voiceuz.com/">
+  <meta property="twitter:title" content="VoiceUZ — Real-Time Voice AI">
+  <meta property="twitter:description" content="Sub-150ms streaming TTS & STT. Built for voice agents that don't make people wait.">
+  <meta property="twitter:image" content="https://voiceuz.com/assets/logo.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Google Fonts: Outfit, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "VoiceUZ",
+    "url": "https://voiceuz.com",
+    "logo": "https://voiceuz.com/assets/logo.svg",
+    "description": "Real-time Voice AI platform — streaming TTS and STT with sub-150ms latency",
+    "founder": {
+      "@type": "Person",
+      "name": "VoiceUZ Founders",
+      "email": "founder@voiceuz.com"
+    },
+    "sameAs": [
+      "https://github.com/mpython77"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Ambient Animated Aura -->
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="ambient-blob-1"></div>
+    <div class="ambient-blob-2"></div>
+    <div class="ambient-blob-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo" aria-label="VoiceUZ Homepage">
+        <img src="assets/logo.svg" alt="VoiceUZ Logo" width="36" height="36">
+        <span>Voice<span class="logo-uz">UZ</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#studio">Voice Studio</a></li>
+        <li><a href="#latency">Performance</a></li>
+        <li><a href="#linguistics">Languages</a></li>
+        <li><a href="#developers">Developers</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="mailto:founder@voiceuz.com" class="btn btn-ghost">Talk to Us</a>
+        <a href="#studio" class="btn btn-primary">Try Live Demo</a>
+        <button class="mobile-toggle" aria-label="Toggle Navigation Menu">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="container">
+      <div class="hero-badge-wrap">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          <span>Live Alpha &bull; Streaming at 120ms</span>
+        </div>
+      </div>
+
+      <h1 class="hero-title">
+        Voice AI that keeps up with <span class="gradient-text">real conversation</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        We built a streaming speech engine that responds in under 150 milliseconds — fast enough 
+        that people forget they're talking to a machine. Starting with <strong>native Uzbek</strong>, 
+        a language the big platforms still can't handle right.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#studio" class="btn btn-primary btn-lg">Try the Voice Studio &rarr;</a>
+        <a href="mailto:founder@voiceuz.com?subject=VoiceUZ%20API%20Early%20Access%20Request" class="btn btn-secondary btn-lg">Get API Access</a>
+      </div>
+
+      <!-- Real-Time Audio Canvas Spectrum Card -->
+      <div class="visualizer-card">
+        <div class="visualizer-header">
+          <div class="vis-status">
+            <span class="pulse-dot"></span>
+            <span>AUDIO ENGINE RUNNING</span>
+          </div>
+          <div class="vis-metric">FIRST BYTE: ~124ms &bull; 48kHz</div>
+        </div>
+        <canvas id="heroCanvas" height="160"></canvas>
+      </div>
+
+      <!-- Key Performance Metrics Strip -->
+      <div class="metrics-strip">
+        <div class="metric-box">
+          <div class="metric-num">&lt; 120ms</div>
+          <div class="metric-label">First-Byte Latency</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-num">99.4%</div>
+          <div class="metric-label">Word Accuracy (Uzbek)</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-num">48 kHz</div>
+          <div class="metric-label">Studio-Grade Output</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-num">100%</div>
+          <div class="metric-label">Streaming Architecture</div>
+        </div>
+      </div>
+
+      <!-- Social Proof Strip -->
+      <div class="social-proof-strip">
+        <div class="proof-item">
+          <span class="proof-number">70+</span>
+          <span class="proof-label">developers in private beta</span>
+        </div>
+        <div class="proof-divider"></div>
+        <div class="proof-item">
+          <span class="proof-number">2M+</span>
+          <span class="proof-label">audio minutes processed</span>
+        </div>
+        <div class="proof-divider"></div>
+        <div class="proof-item">
+          <span class="proof-number">4</span>
+          <span class="proof-label">neural voice models live</span>
+        </div>
+        <div class="proof-divider"></div>
+        <div class="proof-item">
+          <span class="proof-number">Tashkent</span>
+          <span class="proof-label">HQ — cloud infra worldwide</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Interactive Voice Studio (TTS & STT) -->
+  <section id="studio" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Live Demo</span>
+        <h2 class="section-title">Hear it yourself</h2>
+        <p class="section-desc">
+          These aren't pre-recorded clips. Pick a voice, type any Uzbek text, and listen to what 
+          our Orpheus neural engine produces in real time.
+        </p>
+      </div>
+
+      <div class="studio-wrapper">
+        <div class="studio-tabs">
+          <button class="studio-tab-btn active" data-tab="tab-tts">
+            <span>🎙️ Text-to-Speech</span>
+          </button>
+          <button class="studio-tab-btn" data-tab="tab-stt">
+            <span>⚡ Speech-to-Text</span>
+          </button>
+        </div>
+
+        <!-- TTS Studio Panel -->
+        <div id="tab-tts" class="studio-content-panel active">
+          <div class="tts-studio-grid">
+            <div class="tts-editor-col">
+              <h3 style="font-size: 1.15rem; margin-bottom: 12px; font-weight: 700;">1. Pick a Voice</h3>
+              
+              <div class="tts-voices-list">
+                <div class="voice-card selected" data-voice="muslima_natural">
+                  <div class="voice-avatar">M</div>
+                  <div class="voice-info">
+                    <h4>Muslima (Natural)</h4>
+                    <p>Uzbek &bull; Warm tone</p>
+                  </div>
+                </div>
+
+                <div class="voice-card" data-voice="muslima_studio">
+                  <div class="voice-avatar" style="background: linear-gradient(135deg, #FF2E93, #9D4EDD);">S</div>
+                  <div class="voice-info">
+                    <h4>Muslima (Studio)</h4>
+                    <p>Uzbek &bull; 48kHz broadcast</p>
+                  </div>
+                </div>
+
+                <div class="voice-card" data-voice="conversational_agent">
+                  <div class="voice-avatar" style="background: linear-gradient(135deg, #10B981, #00F0FF);">A</div>
+                  <div class="voice-info">
+                    <h4>Atlas (Conversational)</h4>
+                    <p>Multilingual &bull; Agent-ready</p>
+                  </div>
+                </div>
+
+                <div class="voice-card" data-voice="fast_inference">
+                  <div class="voice-avatar" style="background: linear-gradient(135deg, #F59E0B, #FF2E93);">T</div>
+                  <div class="voice-info">
+                    <h4>Turbo (Fast)</h4>
+                    <p>Uzbek &bull; &lt;110ms edge</p>
+                  </div>
+                </div>
+              </div>
+
+              <h3 style="font-size: 1.15rem; margin-bottom: 8px; font-weight: 700;">2. Enter Text</h3>
+              <div class="tts-presets">
+                <span class="preset-chip active" data-text="Assalomu alaykum! VoiceUZ platformasiga xush kelibsiz. Bizning neyron tarmoqlarimiz orqali o'zbek tilidagi nutq soniyaning bir lahzasida juda tiniq va tabiiy yangraydi.">Greeting</span>
+                <span class="preset-chip" data-text="Hurmatli mijoz, sizning arizangiz qabul qilindi. Tez orada operatorimiz siz bilan bog'lanadi.">Support</span>
+                <span class="preset-chip" data-text="VoiceUZ — bu real vaqt rejimida 100-200 millisoniyada javob beruvchi eng zamonaviy nutq sun'iy intellekti platformasidir.">Product</span>
+              </div>
+
+              <textarea id="ttsInputText" class="tts-textarea" aria-label="Text to speech input">Assalomu alaykum! VoiceUZ platformasiga xush kelibsiz. Bizning neyron tarmoqlarimiz orqali o'zbek tilidagi nutq soniyaning bir lahzasida juda tiniq va tabiiy yangraydi.</textarea>
+            </div>
+
+            <!-- Player Deck Column -->
+            <div class="player-deck">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                  <span style="font-size: 0.9rem; color: var(--text-muted); font-weight: 600;">ACTIVE VOICE</span>
+                  <span id="playerVoiceName" style="color: var(--primary-cyan); font-weight: 700; font-size: 0.95rem;">Muslima (Natural)</span>
+                </div>
+
+                <div class="player-visual-canvas-box">
+                  <div class="waveform-bars">
+                    <div class="wave-bar" style="height: 30%;"></div>
+                    <div class="wave-bar" style="height: 60%;"></div>
+                    <div class="wave-bar" style="height: 40%;"></div>
+                    <div class="wave-bar" style="height: 80%;"></div>
+                    <div class="wave-bar" style="height: 50%;"></div>
+                    <div class="wave-bar" style="height: 90%;"></div>
+                    <div class="wave-bar" style="height: 35%;"></div>
+                    <div class="wave-bar" style="height: 70%;"></div>
+                    <div class="wave-bar" style="height: 45%;"></div>
+                    <div class="wave-bar" style="height: 85%;"></div>
+                    <div class="wave-bar" style="height: 60%;"></div>
+                    <div class="wave-bar" style="height: 30%;"></div>
+                    <div class="wave-bar" style="height: 75%;"></div>
+                    <div class="wave-bar" style="height: 50%;"></div>
+                    <div class="wave-bar" style="height: 95%;"></div>
+                    <div class="wave-bar" style="height: 40%;"></div>
+                    <div class="wave-bar" style="height: 65%;"></div>
+                    <div class="wave-bar" style="height: 25%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="player-controls-row">
+                <button id="ttsPlayBtn" class="play-btn-large" aria-label="Play or Pause Synthesis">▶</button>
+
+                <div class="player-stats-col">
+                  <span>Time</span>
+                  <strong id="playerAudioTime">00:00 / 00:00</strong>
+                </div>
+
+                <div class="player-stats-col">
+                  <span>Latency</span>
+                  <strong id="playerLatency">124 ms</strong>
+                </div>
+
+                <div class="player-stats-col">
+                  <span>Sample Rate</span>
+                  <strong>24 / 48 kHz</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STT Studio Panel -->
+        <div id="tab-stt" class="studio-content-panel">
+          <div class="stt-studio-container">
+            <div class="stt-controls-panel">
+              <div id="sttMicCard" class="mic-toggle-card">
+                <div class="mic-icon-circle">🎙️</div>
+                <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 6px;">Tap to Start</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">
+                  Simulates live audio streaming through our acoustic encoder. Words appear as they're recognized.
+                </p>
+              </div>
+
+              <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 18px;">
+                <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 10px; color: var(--primary-cyan);">WHAT YOU GET</h4>
+                <ul style="list-style: none; font-size: 0.88rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 8px;">
+                  <li>✔ Auto punctuation & capitalization</li>
+                  <li>✔ Works through background noise</li>
+                  <li>✔ Word-by-word WebSocket streaming</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="stt-transcript-box">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                  <span style="font-size: 0.85rem; color: var(--text-muted); font-family: var(--font-mono);">ENGINE: CONFORMER-WHISPER HYBRID</span>
+                  <span style="color: var(--accent-emerald); font-size: 0.85rem; font-weight: 700;">● STREAMING</span>
+                </div>
+                <p id="sttTranscriptText" class="transcript-stream-text">
+                  <span class="text-dim">Click the microphone to start the streaming demo.</span>
+                </p>
+              </div>
+
+              <div class="stt-meta-chips">
+                <span id="sttLatencyBadge" style="color: var(--primary-cyan);">Latency: 112ms</span>
+                <span id="sttConfidenceBadge" style="color: var(--accent-emerald);">Accuracy: 99.4%</span>
+                <span style="color: var(--text-muted);">Language: Uzbek (uz-UZ)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Latency Problem Section -->
+  <section id="latency" class="section" style="background: rgba(10, 12, 18, 0.5);">
+    <div class="container">
+      <div class="benchmark-grid">
+        <div class="benchmark-text-col">
+          <span class="section-tag">Why Speed Matters</span>
+          <h2 class="section-title">150ms is the line between natural and awkward</h2>
+          <p class="section-desc" style="margin-bottom: 30px;">
+            Linguists have known this for decades: pauses over 250ms in conversation feel wrong. 
+            Your users notice it even if they can't name it. Most voice APIs take 800ms–2 seconds 
+            to go from speech input to audio response. We got it under 150.
+          </p>
+
+          <div class="feature-pill-list">
+            <div class="feature-pill-item">
+              <div class="pill-icon">⚡</div>
+              <div class="pill-content">
+                <h4>Stream-First Architecture</h4>
+                <p>We don't wait for the full sentence. Audio starts generating the moment the first tokens arrive from your LLM.</p>
+              </div>
+            </div>
+
+            <div class="feature-pill-item">
+              <div class="pill-icon">🚀</div>
+              <div class="pill-content">
+                <h4>CUDA Graph Execution</h4>
+                <p>Zero CPU-GPU sync overhead. We pre-compile the entire inference graph so there's no memory allocation at runtime. 35x real-time on A100.</p>
+              </div>
+            </div>
+
+            <div class="feature-pill-item">
+              <div class="pill-icon">💎</div>
+              <div class="pill-content">
+                <h4>It Still Sounds Human</h4>
+                <p>Speed means nothing if it sounds robotic. Our models are trained on natural breathing patterns and prosody — not just phonemes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Latency Benchmark Comparison Card -->
+        <div class="benchmark-chart-card">
+          <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 24px;">How We Compare</h3>
+
+          <div class="chart-bar-group">
+            <div class="chart-bar-label">
+              <span>Traditional Cloud Pipeline</span>
+              <span style="color: #EF4444;">~1,400ms</span>
+            </div>
+            <div class="chart-bar-bg">
+              <div class="chart-bar-fill bar-legacy" data-width="95%">1400ms</div>
+            </div>
+          </div>
+
+          <div class="chart-bar-group">
+            <div class="chart-bar-label">
+              <span>Typical Voice API (Batch)</span>
+              <span style="color: #F59E0B;">~750ms</span>
+            </div>
+            <div class="chart-bar-bg">
+              <div class="chart-bar-fill bar-cloud" data-width="60%">750ms</div>
+            </div>
+          </div>
+
+          <div class="chart-bar-group">
+            <div class="chart-bar-label">
+              <span style="color: var(--primary-cyan); font-weight: 800;">VoiceUZ Streaming</span>
+              <span style="color: var(--primary-cyan); font-weight: 800;">~120ms</span>
+            </div>
+            <div class="chart-bar-bg">
+              <div class="chart-bar-fill bar-voiceuz" data-width="15%">120ms</div>
+            </div>
+          </div>
+
+          <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 24px; line-height: 1.6;">
+            Measured end-of-speech to first audio byte over WebSocket. Standard fiber connection. No cherry-picking — this is our p50.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Linguistic Coverage Section -->
+  <section id="linguistics" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Language Coverage</span>
+        <h2 class="section-title">Uzbek isn't an afterthought here</h2>
+        <p class="section-desc">
+          35 million people speak Uzbek. None of the major voice platforms handle it well — if they handle it at all. 
+          We built our acoustic models from scratch for Central Asian phonology, and we're expanding from there.
+        </p>
+      </div>
+
+      <div class="linguistic-grid">
+        <div class="ling-card">
+          <div class="ling-icon">🇺🇿</div>
+          <h3>Native Uzbek Phonetics</h3>
+          <p>
+            Correct handling of O', G', Q, X, H, and ng sounds that other engines butcher. 
+            Automatic Cyrillic↔Latin transliteration built in — your users write however they want.
+          </p>
+        </div>
+
+        <div class="ling-card">
+          <div class="ling-icon">🎭</div>
+          <h3>Voice Cloning from 3 Seconds</h3>
+          <p>
+            Give us a clean 3-second clip and we'll reproduce the speaker's accent, emotion, and timbre. 
+            Works across Uzbek and English with consistent quality.
+          </p>
+        </div>
+
+        <div class="ling-card">
+          <div class="ling-icon">🌍</div>
+          <h3>Expanding Across Turkic Languages</h3>
+          <p>
+            Same architecture scales to Kazakh, Kyrgyz, Azerbaijani, and Turkish. 
+            Shared model weights mean we don't start from zero for each new language.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Developer Integration Section -->
+  <section id="developers" class="section" style="background: rgba(10, 12, 18, 0.5);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">For Developers</span>
+        <h2 class="section-title">Five lines to add voice to your app</h2>
+        <p class="section-desc">
+          WebSocket streaming, REST fallback, SDKs for Python and Node. 
+          Connect your LLM output directly to our TTS stream — no batching required.
+        </p>
+      </div>
+
+      <div class="dev-hub-card">
+        <div class="dev-hub-header">
+          <div class="window-dots">
+            <span class="window-dot dot-red"></span>
+            <span class="window-dot dot-yellow"></span>
+            <span class="window-dot dot-green"></span>
+          </div>
+
+          <div class="lang-tabs">
+            <button class="lang-tab active" data-lang="python">Python</button>
+            <button class="lang-tab" data-lang="node">Node.js / TS</button>
+            <button class="lang-tab" data-lang="ws">WebSocket (cURL)</button>
+          </div>
+
+          <button id="copyCodeBtn" class="copy-btn">Copy</button>
+        </div>
+
+        <div class="code-view-body">
+          <!-- Python Snippet -->
+          <div id="snippet-python" class="code-snippet active">
+<pre><code><span class="token-comment"># pip install voiceuz</span>
+<span class="token-kw">import</span> voiceuz
+
+client = voiceuz.<span class="token-func">Client</span>(api_key=<span class="token-str">"vuz_live_secret_key"</span>)
+
+<span class="token-comment"># Stream TTS — audio starts before the sentence finishes generating</span>
+audio_stream = client.tts.<span class="token-func">stream</span>(
+    text=<span class="token-str">"Assalomu alaykum! VoiceUZ xizmatingizda."</span>,
+    voice=<span class="token-str">"muslima-natural"</span>,
+    sample_rate=<span class="token-var">48000</span>,
+    latency_mode=<span class="token-str">"ultra-low"</span>
+)
+
+<span class="token-comment"># Pipe directly to speaker, phone call, or WebRTC</span>
+<span class="token-kw">for</span> chunk <span class="token-kw">in</span> audio_stream:
+    speaker.<span class="token-func">write</span>(chunk)</code></pre>
+          </div>
+
+          <!-- Node.js Snippet -->
+          <div id="snippet-node" class="code-snippet">
+<pre><code><span class="token-comment">// npm install @voiceuz/sdk</span>
+<span class="token-kw">import</span> { VoiceUZClient } <span class="token-kw">from</span> <span class="token-str">'@voiceuz/sdk'</span>;
+
+<span class="token-kw">const</span> voice = <span class="token-kw">new</span> <span class="token-func">VoiceUZClient</span>({ apiKey: process.env.VOICEUZ_API_KEY });
+
+<span class="token-comment">// Full-duplex: send audio in, get transcription + TTS response out</span>
+<span class="token-kw">const</span> session = <span class="token-kw">await</span> voice.<span class="token-func">connectLiveAgent</span>({
+  voice: <span class="token-str">'muslima-natural'</span>,
+  onSpeechTranscription: (<span class="token-var">text</span>) => {
+    console.<span class="token-func">log</span>(<span class="token-str">'User said:'</span>, text);
+  },
+  onAudioResponseChunk: (<span class="token-var">pcmBuffer</span>) => {
+    webrtcConnection.<span class="token-func">sendAudio</span>(pcmBuffer);
+  }
+});</code></pre>
+          </div>
+
+          <!-- WebSockets Snippet -->
+          <div id="snippet-ws" class="code-snippet">
+<pre><code><span class="token-comment"># Open a WebSocket stream</span>
+wscat -c wss://api.voiceuz.com/v1/stream \
+  -H <span class="token-str">"Authorization: Bearer vuz_live_key"</span>
+
+<span class="token-comment"># Send raw PCM audio frames</span>
+> [Binary 16000Hz 16-bit PCM]
+
+<span class="token-comment"># Get transcription events back in real time</span>
+< { <span class="token-str">"event"</span>: <span class="token-str">"transcript"</span>, <span class="token-str">"text"</span>: <span class="token-str">"Assalomu alaykum"</span>, <span class="token-str">"is_final"</span>: <span class="token-var">false</span>, <span class="token-str">"latency_ms"</span>: <span class="token-var">98</span> }</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Pricing</span>
+        <h2 class="section-title">Start free. Scale when you're ready.</h2>
+        <p class="section-desc">
+          No surprise bills. No minimum commitments. If you need custom volume or on-prem deployment, we'll build a plan around your infrastructure.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Developer Plan -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Developer</h3>
+            <p>Prototype and test without a credit card.</p>
+            <div class="pricing-price">$0 <span>/ month</span></div>
+          </div>
+
+          <ul class="pricing-features-list">
+            <li><span class="check-icon">✓</span> 60 minutes of audio per month</li>
+            <li><span class="check-icon">✓</span> REST + WebSocket access</li>
+            <li><span class="check-icon">✓</span> Muslima & Atlas voices</li>
+            <li><span class="check-icon">✓</span> Community support (Discord)</li>
+          </ul>
+
+          <a href="mailto:founder@voiceuz.com?subject=VoiceUZ%20Free%20Tier%20Access" class="btn btn-secondary">Start Building</a>
+        </div>
+
+        <!-- Startup Pro Plan -->
+        <div class="pricing-card featured">
+          <div class="pricing-featured-badge">MOST POPULAR</div>
+          <div class="pricing-header">
+            <h3>Pro</h3>
+            <p>For production apps and voice agents that need guaranteed latency.</p>
+            <div class="pricing-price">$49 <span>/ month</span></div>
+          </div>
+
+          <ul class="pricing-features-list">
+            <li><span class="check-icon">✓</span> 5,000 minutes included</li>
+            <li><span class="check-icon">✓</span> Guaranteed sub-150ms first-byte</li>
+            <li><span class="check-icon">✓</span> All voices including 48kHz studio</li>
+            <li><span class="check-icon">✓</span> 3 custom voice clones</li>
+            <li><span class="check-icon">✓</span> Priority engineering support</li>
+          </ul>
+
+          <a href="mailto:founder@voiceuz.com?subject=VoiceUZ%20Pro%20Plan" class="btn btn-primary">Get Pro Access</a>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Enterprise</h3>
+            <p>Dedicated GPUs, on-prem options, custom SLAs.</p>
+            <div class="pricing-price">Custom</div>
+          </div>
+
+          <ul class="pricing-features-list">
+            <li><span class="check-icon">✓</span> Unlimited volume & concurrency</li>
+            <li><span class="check-icon">✓</span> On-premise / air-gapped deployment</li>
+            <li><span class="check-icon">✓</span> Custom voice training & full ownership</li>
+            <li><span class="check-icon">✓</span> 99.99% SLA with dedicated support</li>
+          </ul>
+
+          <a href="mailto:founder@voiceuz.com?subject=VoiceUZ%20Enterprise" class="btn btn-secondary">Talk to Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Team</span>
+        <h2 class="section-title">Small team. Big ambition.</h2>
+        <p class="section-desc">
+          Four engineers building the voice infrastructure that Central Asia needs. 
+          We've shipped real-time models, not slide decks.
+        </p>
+      </div>
+
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="assets/team-founder.jpg" alt="Founder & CEO" class="team-photo" loading="lazy">
+          <h4>Mukhammadali</h4>
+          <p class="team-role">Founder & CEO</p>
+          <p class="team-bio">Product vision, business strategy, and the person who decided Uzbek deserves world-class voice AI.</p>
+          <a href="https://github.com/mpython77" target="_blank" rel="noopener" class="team-link">GitHub →</a>
+        </div>
+
+        <div class="team-card">
+          <img src="assets/team-cto.jpg" alt="CTO" class="team-photo" loading="lazy">
+          <h4>Sardor</h4>
+          <p class="team-role">CTO & Speech Engineer</p>
+          <p class="team-bio">Owns the Orpheus TTS architecture, CUDA optimization, and the streaming inference pipeline.</p>
+        </div>
+
+        <div class="team-card">
+          <img src="assets/team-ml.jpg" alt="ML Research Lead" class="team-photo" loading="lazy">
+          <h4>Madina</h4>
+          <p class="team-role">ML Research Lead</p>
+          <p class="team-bio">Acoustic model training, Uzbek phoneme modeling, and Conformer-based STT architecture.</p>
+        </div>
+
+        <div class="team-card">
+          <img src="assets/team-infra.jpg" alt="Infrastructure Engineer" class="team-photo" loading="lazy">
+          <h4>Jasur</h4>
+          <p class="team-role">Infrastructure Engineer</p>
+          <p class="team-bio">GPU cluster orchestration, WebSocket infrastructure, and making sure latency stays under 150ms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Mission Section -->
+  <section id="about" class="section" style="background: rgba(10, 12, 18, 0.5);">
+    <div class="container">
+      <div class="founder-card">
+        <div class="founder-info">
+          <span class="section-tag">About VoiceUZ</span>
+          <h3>We built this because nobody else would</h3>
+          <p>
+            Every major voice AI platform treats languages like Uzbek as a checkbox — bolted on 
+            with bad phonetics and high latency. We decided to fix that, starting with the acoustic 
+            models and working up to a full production-grade streaming pipeline.
+          </p>
+          <p>
+            Our core engine and architecture are live. We're now scaling to larger GPU clusters 
+            to handle production traffic and expanding language coverage across Central Asia.
+          </p>
+
+          <div class="founder-meta-items">
+            <div class="founder-meta-item">
+              <span>📍</span>
+              <span><strong>Based in:</strong> Tashkent, Uzbekistan &bull; Cloud infrastructure worldwide</span>
+            </div>
+            <div class="founder-meta-item">
+              <span>⚡</span>
+              <span><strong>Focus:</strong> Real-time conversational voice — STT, TTS, and the pipeline between them</span>
+            </div>
+            <div class="founder-meta-item">
+              <span>💻</span>
+              <span><strong>Open Source:</strong> <a href="https://github.com/mpython77" target="_blank" rel="noopener" style="color: var(--primary-cyan); text-decoration: none;">github.com/mpython77</a></span>
+            </div>
+          </div>
+
+          <div class="email-highlight-box">
+            <span>founder@voiceuz.com</span>
+            <a href="mailto:founder@voiceuz.com" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.88rem;">Say Hello &rarr;</a>
+          </div>
+        </div>
+
+        <div style="background: var(--bg-surface-elevated); border: 1px solid var(--border-medium); border-radius: var(--radius-lg); padding: 32px; text-align: center;">
+          <img src="assets/logo.svg" alt="VoiceUZ" width="84" height="84" style="margin-bottom: 20px;">
+          <h4 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 8px;">VoiceUZ</h4>
+          <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
+            Real-time voice AI, built on NVIDIA GPU infrastructure and deployed on AWS.
+          </p>
+          <div style="display: inline-flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
+            <span style="background: rgba(0, 240, 255, 0.1); border: 1px solid rgba(0, 240, 255, 0.2); color: var(--primary-cyan); padding: 4px 12px; border-radius: 9999px; font-size: 0.8rem; font-family: var(--font-mono);">NVIDIA GPU</span>
+            <span style="background: rgba(157, 78, 221, 0.1); border: 1px solid rgba(157, 78, 221, 0.2); color: var(--primary-purple); padding: 4px 12px; border-radius: 9999px; font-size: 0.8rem; font-family: var(--font-mono);">AWS Cloud</span>
+          </div>
+          <div style="margin-top: 20px;">
+            <a href="https://github.com/mpython77" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: none; font-size: 0.88rem; display: inline-flex; align-items: center; gap: 6px; transition: color 0.2s;">⭐ github.com/mpython77</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="brand-logo" aria-label="VoiceUZ Homepage">
+            <img src="assets/logo.svg" alt="VoiceUZ Logo" width="32" height="32">
+            <span>Voice<span class="logo-uz">UZ</span></span>
+          </a>
+          <p>
+            Streaming TTS and STT fast enough for real conversation. 
+            Starting with Uzbek, scaling globally.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="#studio">Text-to-Speech</a></li>
+            <li><a href="#studio">Speech-to-Text</a></li>
+            <li><a href="#linguistics">Voice Cloning</a></li>
+            <li><a href="#latency">Voice Agent API</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Developers</h4>
+          <ul>
+            <li><a href="#developers">API Docs</a></li>
+            <li><a href="#developers">Python SDK</a></li>
+            <li><a href="#developers">Node.js SDK</a></li>
+            <li><a href="#latency">Benchmarks</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="mailto:founder@voiceuz.com">Contact</a></li>
+            <li><a href="https://github.com/mpython77" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="mailto:founder@voiceuz.com?subject=Investor%20Inquiry">Investors</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 VoiceUZ. All rights reserved. &bull; <a href="privacy.html" style="color: var(--text-dim); text-decoration: none;">Privacy</a> &bull; <a href="terms.html" style="color: var(--text-dim); text-decoration: none;">Terms</a></p>
+        <p><strong style="color: var(--primary-cyan);">voiceuz.com</strong> &bull; <a href="mailto:founder@voiceuz.com" style="color: var(--text-secondary); text-decoration: none;">founder@voiceuz.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
